@@ -1,5 +1,5 @@
 // Config
-var port = 3002
+var port = process.env.PORT || 3000
 
 
 
