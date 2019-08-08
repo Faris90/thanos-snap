@@ -1827,11 +1827,15 @@ Process.prototype.ping = function (site) {
   return this.reportURL('http://localhost:3002/httpget/?value=' + site);
 };
 Process.prototype.setcloudvar = function (a,b) {
-    // experimental
+    // set cloud var
   return this.reportURL(location.host + '/setvar/' + '?var=' + a + "_id_" + cloudid + '&val=' + b);
 };
+Process.prototype.setcloudID = function (a) {
+    // set cloud ID
+cloudid = a
+};
 Process.prototype.getcloudvar = function (a) {
-    // experimental
+    // get cloud var
 	var rent = new Function('return '+  this.reportURL(location.host + '/getvar/' + '?var=' + a + "_id_" + cloudid) + '')
   //return this.reportURL('http://localhost:3002/getvar/' + '?var=' + a);
   return rent()
