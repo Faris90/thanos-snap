@@ -982,10 +982,10 @@ SpriteMorph.prototype.initBlocks = function () {
             defaults: ['snap.berkeley.edu']
         },
 		 setcloudID: {
-            type: 'reporter',
+            type: 'command',
             category: 'web',
             spec: 'set cloud ID to %s',
-            defaults: ['http://snap.berkeley.edu']
+            defaults: [Math.random()]
         },
 		 setcloudvar: {
             type: 'command',
