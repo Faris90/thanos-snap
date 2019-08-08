@@ -981,10 +981,10 @@ SpriteMorph.prototype.initBlocks = function () {
             spec: 'url %s',
             defaults: ['snap.berkeley.edu']
         },
-		 ping: {
+		 setcloudID: {
             type: 'reporter',
             category: 'web',
-            spec: 'ping %s',
+            spec: 'set cloud ID to %s',
             defaults: ['http://snap.berkeley.edu']
         },
 		 setcloudvar: {
@@ -2437,7 +2437,7 @@ SpriteMorph.prototype.blockTemplates = function (category) {
 		blocks.push('=');
         blocks.push(this.makeBlockButton(cat));
 	} else if (cat === 'web') {
-		blocks.push(block('ping'));
+		blocks.push(block('setcloudID'));
 		blocks.push(block('setcloudvar'));
 		blocks.push(block('getcloudvar'));
     } else if (cat === 'operators') {
