@@ -62,7 +62,7 @@ isNil, WatcherMorph, List, ListWatcherMorph, alert, console, TableMorph, Color,
 TableFrameMorph, ColorSlotMorph, isSnapObject, Map, newCanvas, Symbol*/
 
 modules.threads = '2019-June-25';
-
+cloudid = ""
 var ThreadManager;
 var Process;
 var Context;
@@ -1828,11 +1828,11 @@ Process.prototype.ping = function (site) {
 };
 Process.prototype.setcloudvar = function (a,b) {
     // experimental
-  return this.reportURL(location.host + '/setvar/' + '?var=' + a + '&val=' + b);
+  return this.reportURL(location.host + '/setvar/' + '?var=' + a + "_id_" + cloudid + '&val=' + b);
 };
 Process.prototype.getcloudvar = function (a) {
     // experimental
-	var rent = new Function('return '+  this.reportURL(location.host + '/getvar/' + '?var=' + a) + '')
+	var rent = new Function('return '+  this.reportURL(location.host + '/getvar/' + '?var=' + a + "_id_" + cloudid) + '')
   //return this.reportURL('http://localhost:3002/getvar/' + '?var=' + a);
   return rent()
 };
